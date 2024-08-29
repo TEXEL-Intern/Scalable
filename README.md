@@ -7,7 +7,7 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release && cd build && make -j && project/SLIM
 ### Detailed Parameter Choices
 
 1. **Name**: Path to your mesh file
-   - Default: `"mesh_test/hemisphere.obj"` on Linux, `"project/mesh_test/hemisphere.obj"` on Windows.
+   - Default: `project/mesh_test/hemisphere.obj`
 
 2. **Weights**: Type of weights for Tutte's embedding
    - Default: `1` (uniform weights)
