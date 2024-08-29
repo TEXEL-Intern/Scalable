@@ -27,7 +27,6 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release && cd build && make -j && project/SLIM
      - `"HENCKY_STRAIN"`
      - `"AMIPS"`
      - `"CONFORMAL_AMIPS_2D"`
-     - `"CONFORMAL_AMIPS_3D"`
      - `"UNTANGLE_2D"`
 
 4. **Max Iterations**: Maximum number of iterations for the optimization
