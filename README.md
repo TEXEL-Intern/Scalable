@@ -15,7 +15,7 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release && cd build && make -j && project/SLIM
      - `1`: Uniform weights
      - `2`: Cotangent weights
      - `3`: Random weights
-     - `4`: Sanity check
+     - `4`: Swap points
      - `5`: Texture coordinates, only extract the texture coordinates of the mesh
 
 3. **Energy**: Distortion measure used in the optimization
