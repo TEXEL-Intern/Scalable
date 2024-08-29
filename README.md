@@ -42,11 +42,11 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release && cd build && make -j && project/SLIM
 You can provide the arguments directly. For instance:
 
 ```sh
-make -j && project/SLIM_intern name=mesh_test/hemisphere.obj weights=1 max_iterations=20 energy=UNTANGLE_2D epsilon=0.5
+make -j && project/SLIM_intern name=project/mesh_test/hemisphere.obj weights=1 max_iterations=20 energy=UNTANGLE_2D epsilon=0.5
 ```
 
 This command uses:
-- `mesh_test/hemisphere.obj` as the mesh file.
+- `project/mesh_test/hemisphere.obj` as the mesh file.
 - `1` for uniform weights.
 - `20` as the maximum number of iterations.
 - `UNTANGLE_2D` as the energy.
