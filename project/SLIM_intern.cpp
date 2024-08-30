@@ -767,7 +767,7 @@ void TrianglesMapping::Tutte1963(const char* name, int weights) {
     char weight5[25] = "_texture_coordinates";
     bool texture_coordinates = false;
 
-    // Create directory if it doesn't exist
+    // Create directory if it does not exist
     std::filesystem::path stem_dir(stem);
     if (!std::filesystem::exists(stem_dir)) {
         std::filesystem::create_directory(stem_dir);
@@ -800,7 +800,6 @@ void TrianglesMapping::Tutte1963(const char* name, int weights) {
         weights = 1;
     }
     strcpy(output_name_obj, output_name_geo);
-    // strcat(output_name, attribute);
     strcat(output_name_geo, ext2);
     strcat(output_name_obj, ".obj");
 
@@ -1284,13 +1283,13 @@ void TrianglesMapping::LocalGlobalParametrization(const char* map) {
         }
         auto end = std::chrono::high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-        totalTime += duration; // Accumulate total time
+        totalTime += duration;
         if (timeFile.is_open()) {
-            timeFile << i << "|" << duration << "|"; // Write iteration number and duration to file
+            timeFile << i << "|" << duration << "|";
         }
 
         if (timeFile.is_open()) {
-            timeFile << totalTime << "|"; // Log total time
+            timeFile << totalTime << "|";
             timeFile << minArea << "|" << maxArea << "|" << minEnergy << "|" << maxEnergy << "|";
             timeFile << mLocGlo.nverts() << "|" << mLocGlo.nfacets() << "|" << mLocGlo.ncorners() << "|" << alpha << "|" << energumene << "|" << minimum_determinant << "|" << maximum_divide_singular;
             if (strcmp(energy, "UNTANGLE-2D") == 0) {
