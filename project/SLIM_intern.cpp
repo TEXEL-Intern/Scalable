@@ -18,7 +18,7 @@ TrianglesMapping::TrianglesMapping(const int acount, char** avariable) {
     params.add("int", "weights", "1").description("Weights parameter.");
     params.add("int", "max_iterations", "50").description("Maximum number of iterations for the algorithm Generalized Reweighted local/global.");
     params.add("string", "energy", "SYMMETRIC-DIRICHLET").description("Energy type: ARAP, SYMMETRIC-DIRICHLET, EXPONENTIAL-SYMMETRIC-DIRICHLET, HENCKY-STRAIN, AMIPS, CONFORMAL-AMIPS-2D, UNTANGLE-2D.");
-    params.add("float", "epsilon", "0.1").description("Epsilon value for the computation of UNTANGLE-2D");
+    params.add("float", "epsilon", "0.1").description("Epsilon value for the computation of UNTANGLE-2D.");
     params.init_from_args(acount, avariable);
 
     weights = std::stoi(params["weights"]);
@@ -38,7 +38,7 @@ TrianglesMapping::TrianglesMapping(const int acount, char** avariable) {
         }
     }
 
-    if (std::strlen(name) == 0) {
+    if (name == nullptr) {
         #ifdef _WIN32
             name = "mesh_test/hemisphere.obj";
         #endif
@@ -47,7 +47,7 @@ TrianglesMapping::TrianglesMapping(const int acount, char** avariable) {
         #endif
     }
 
-    if (std::strlen(energy) == 0) {
+    if (energy == nullptr) {
         energy = "SYMMETRIC-DIRICHLET";
     }
 
