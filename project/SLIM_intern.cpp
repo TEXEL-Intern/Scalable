@@ -8,18 +8,17 @@
 
 TrianglesMapping::TrianglesMapping(const int acount, char** avariable) {
     const char* name = nullptr;
-    int weights = -1;
-    max_iterations = -1;
+    int weights;
     energy = nullptr;
 
     // Initialize the param-parser
     Parameters params;
     params.help = "This program processes a mesh file into a 2D map with specific energy and iteration settings.";
-    params.add("input", "name", "").description("Input mesh file");
-    params.add("int", "weights", "-1").description("Weights parameter");
-    params.add("int", "max_iterations", "-1").description("Maximum number of iterations");
-    params.add("string", "energy", "").description("Energy type (ARAP, SYMMETRIC-DIRICHLET, etc.)");
-    params.add("float", "epsilon", "0.0").description("Epsilon value for the computation of UNTANGLE-2D");
+    params.add("input", "name", "project/mesh_test/hemisphere.obj").description("Input mesh file.");
+    params.add("int", "weights", "1").description("Weights parameter.");
+    params.add("int", "max_iterations", "50").description("Maximum number of iterations for the algorithm Generalized Reweighted local/global.");
+    params.add("string", "energy", "SYMMETRIC-DIRICHLET").description("Energy type: ARAP, SYMMETRIC-DIRICHLET, EXPONENTIAL-SYMMETRIC-DIRICHLET, HENCKY-STRAIN, AMIPS, CONFORMAL-AMIPS-2D, UNTANGLE-2D.");
+    params.add("float", "epsilon", "0.1").description("Epsilon value for the computation of UNTANGLE-2D");
     params.init_from_args(acount, avariable);
 
     weights = std::stoi(params["weights"]);
@@ -50,14 +49,6 @@ TrianglesMapping::TrianglesMapping(const int acount, char** avariable) {
 
     if (std::strlen(energy) == 0) {
         energy = "SYMMETRIC-DIRICHLET";
-    }
-
-    if (weights == -1) {
-        weights = 1;
-    }
-
-    if (max_iterations == -1) {
-        max_iterations = 50;
     }
 
     Tutte1963(name, weights);
