@@ -40,7 +40,7 @@ This command uses:
      - `"UNTANGLE-2D"`
 
 4. **Max Iterations**: Maximum number of iterations for the optimization
-   - Default: `100`
+   - Default: `50`
    - Different value in the format `max_iterations=VALUE`.
 
 5. **For `"UNTANGLE-2D"` Only**: Specify the value of the initial epsilon.
