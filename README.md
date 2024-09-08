@@ -43,7 +43,7 @@ This command uses:
    - Default: `100`
    - Different value in the format `max_iterations=VALUE`.
 
-5. **For `"UNTANGLE_2D"` Only**: Specify the value of the initial epsilon.
+5. **For `"UNTANGLE-2D"` Only**: Specify the value of the initial epsilon.
    - Default: `1e-1`
    - Different value in the format `epsilon=VALUE`.
 
