@@ -4,8 +4,15 @@
 cmake -B build -DCMAKE_BUILD_TYPE=Release &&
 cd build &&
 make -j &&
-project/SLIM_intern [name=$(Name) weights=$(Weights) max_iterations=$(Max Iterations) energy=$(Energy) epsilon=$(UNTANGLE 2D)]
+project/SLIM_intern name=project/mesh_test/hemisphere.obj weights=1 max_iterations=20 energy=UNTANGLE_2D epsilon=0.5
 ```
+
+This command uses:
+- `project/mesh_test/hemisphere.obj` as the mesh file.
+- `1` for uniform weights.
+- `20` as the maximum number of iterations.
+- `UNTANGLE_2D` as the energy.
+- `0.5` as the initial epsilon value for untangling in 2D.
 
 ### Detailed Parameter Choices
 
@@ -36,23 +43,9 @@ project/SLIM_intern [name=$(Name) weights=$(Weights) max_iterations=$(Max Iterat
    - Default: `100`
    - Different value in the format `max_iterations=VALUE`.
 
-5. **UNTANGLE 2D**: Specify the value of the initial epsilon.
+5. **For `"UNTANGLE_2D"` Only**: Specify the value of the initial epsilon.
    - Default: `1e-1`
    - Different value in the format `epsilon=VALUE`.
-
-### Example Usage
-
-```sh
-make -j &&
-project/SLIM_intern name=project/mesh_test/hemisphere.obj weights=1 max_iterations=20 energy=UNTANGLE_2D epsilon=0.5
-```
-
-This command uses:
-- `project/mesh_test/hemisphere.obj` as the mesh file.
-- `1` for uniform weights.
-- `20` as the maximum number of iterations.
-- `UNTANGLE_2D` as the energy.
-- `0.5` as the initial epsilon value for untangling in 2D.
 
 ### References
 
