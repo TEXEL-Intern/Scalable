@@ -1,7 +1,10 @@
 # Compile and run:
 
 ```sh
-cmake -B build -DCMAKE_BUILD_TYPE=Release && cd build && make -j && project/SLIM_intern name=$(Name) weights=$(Weights) max_iterations=$(Max Iterations) energy=$(Energy) epsilon=$(UNTANGLE 2D)
+cmake -B build -DCMAKE_BUILD_TYPE=Release &&
+cd build &&
+make -j &&
+project/SLIM_intern [name=$(Name) weights=$(Weights) max_iterations=$(Max Iterations) energy=$(Energy) epsilon=$(UNTANGLE 2D)]
 ```
 
 ### Detailed Parameter Choices
@@ -39,10 +42,9 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release && cd build && make -j && project/SLIM
 
 ### Example Usage
 
-You can provide the arguments directly. For instance:
-
 ```sh
-make -j && project/SLIM_intern name=project/mesh_test/hemisphere.obj weights=1 max_iterations=20 energy=UNTANGLE_2D epsilon=0.5
+make -j &&
+project/SLIM_intern name=project/mesh_test/hemisphere.obj weights=1 max_iterations=20 energy=UNTANGLE_2D epsilon=0.5
 ```
 
 This command uses:
@@ -54,6 +56,6 @@ This command uses:
 
 ### References
 
-DOI:10.1145/3450626.3459847
+Vladimir Garanzha, Igor Kaporin, Liudmila Kudryavtseva, François Protais, Nicolas Ray, and Dmitry Sokolov. 2021. Foldover-free maps in 50 lines of code. ACM Trans. Graph. 40, 4, Article 102 (August 2021), 16 pages. https://doi.org/10.1145/3450626.3459847
 
-DOI:10.1145/2983621
+Michael Rabinovich, Roi Poranne, Daniele Panozzo, and Olga Sorkine-Hornung. 2017. Scalable Locally Injective Mappings. ACM Trans. Graph. 36, 2, Article 16 (April 2017), 16 pages. https://doi.org/10.1145/2983621
