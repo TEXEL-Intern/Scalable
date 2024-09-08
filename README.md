@@ -29,15 +29,15 @@ This command uses:
      - `5`: Texture coordinates, only extract the texture coordinates of the mesh
 
 3. **Energy**: Distortion measure used in the optimization
-   - Default: `"ARAP"`
+   - Default: `"SYMMETRIC-DIRICHLET"`
    - Options:
      - `"ARAP"`
-     - `"SYMMETRIC_DIRICHLET"`
-     - `"EXPONENTIAL_SYMMETRIC_DIRICHLET"`
-     - `"HENCKY_STRAIN"`
+     - `"SYMMETRIC-DIRICHLET"`
+     - `"EXPONENTIAL-SYMMETRIC-DIRICHLET"`
+     - `"HENCKY-STRAIN"`
      - `"AMIPS"`
-     - `"CONFORMAL_AMIPS_2D"`
-     - `"UNTANGLE_2D"`
+     - `"CONFORMAL-AMIPS-2D"`
+     - `"UNTANGLE-2D"`
 
 4. **Max Iterations**: Maximum number of iterations for the optimization
    - Default: `100`
